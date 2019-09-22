@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     def index
-        render json: Task.all
+        render json: Task.order(:id)
     end
 
     def update
@@ -8,7 +8,7 @@ class TasksController < ApplicationController
         task.update_attributes(task_params)
         render json: task
     end
-    
+
     private
 
   def task_params
